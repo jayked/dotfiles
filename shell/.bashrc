@@ -87,7 +87,12 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # source the files in the shell directory
-for file in ./shell/.{aliases,functions}; do
+for file in ~/.dotfiles/shell/.{aliases,functions}; do
    [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
+
+# Extra paths
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH=/usr/local/bin:$PATH
+export PATH="$HOME/.yarn/bin:$PATH"
 
