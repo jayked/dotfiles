@@ -1,0 +1,20 @@
+# Navigation
+alias cdw="cd /mnt/d/www"
+
+# Laravel
+alias a="php artisan"
+
+# Git
+alias pull="git pull"
+alias push="git push"
+alias status="git status"
+alias branch="git branch"
+alias diff="git diff"
+
+# Composer
+alias ci="composer install"
+alias cda="composer dumpautoload"
+
+# Testin
+alias phpunit="php ./vendor/phpunit/phpunit/phpunit"
+
