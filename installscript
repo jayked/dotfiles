@@ -1,11 +1,22 @@
 #!/bin/bash
 
-# Symink bashrc
-ln -s $HOME/.dotfiles/.bashrc $HOME/.bashrc
+# Symlink bashrc
+ln -s $HOME/.dotfiles/shell/.bashrc $HOME/.bashrc
+
+# Symlink vimrc
+ln -s $HOME/.dotfiles/shell/.vimrc $HOME/.vimrc
+
+# Symlink fonts
+ln -s $HOME/.dotfiles/fonts $HOME/.fonts
+ln -s $HOME/.dotfiles/fonts /usr/share/fonts
 
 # Symlink and configure global gitignore
 ln -s $HOME/.dotfiles/shell/.global-gitignore $HOME/.global-gitignore
 git config --global core.excludesfile $HOME/.global-gitignore
+
+echo 'Install PHP'
+echo '-----------'
+apt install php
 
 echo 'Install composer'
 echo '----------------'
