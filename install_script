@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Configure the global gitignore
+ln -s $HOME/dotfiles/sheel/.global-gitignore $HOME/.global-gitignore
+git config --global core.excludesfile $HOME/.global-gitignore
+
