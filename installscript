@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Install some basic system requirements
+apt install curl -y
+
 # Symlink bashrc
 ln -s $HOME/.dotfiles/shell/.bashrc $HOME/.bashrc
 
@@ -14,9 +17,18 @@ ln -s $HOME/.dotfiles/fonts /usr/share/fonts
 ln -s $HOME/.dotfiles/shell/.global-gitignore $HOME/.global-gitignore
 git config --global core.excludesfile $HOME/.global-gitignore
 
+# Install NVM
+echo 'Install NVM'
+echo '-----------'
+cd $HOME
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+cd $HOME/.dotfiles
+echo 'reset the .bashrc file due to changes by the NVM install'
+git checkout HEAD -- shell/.bashrc
+
 echo 'Install PHP'
 echo '-----------'
-apt install php
+apt install php -y
 
 echo 'Install composer'
 echo '----------------'
