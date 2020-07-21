@@ -2,14 +2,14 @@
 For quick configuration of preferences I put the configuration in these dotfiles to sync them over all my environments.
 
 ## Configuration
-Clone the repository in some location (preferrable your use root `~`):
+Clone the repository in the home folder of your user and starting the installation:
 ```
 git clone https://github.com/jayked/dotfiles.git .dotfiles
+cd .dotfiles
+./bootstrap
 ```
-
-Add the following line to your `.bashrc`:
+You can re-install by cd-ing to the `.dotfiles` directory and running the following command:
 ```
-source ~/.dotfiles/bootstrap
+./bootstrap
 ```
-this will refer to the `bootstrap` file in the cloned repository, so when you didn't clone the repo in `~` you will have to point it to the correct location.
 
