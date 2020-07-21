@@ -10,7 +10,6 @@ alias push="git push"
 alias status="git status"
 alias branch="git branch"
 alias diff="git diff"
-alias add="git add ."
 
 # Composer
 alias ci="composer install"
