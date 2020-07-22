@@ -72,3 +72,9 @@ function reload() {
   done
 }
 
+# Small helpers
+function now() {
+  now=$(date +"%T")
+  echo "Current time: ${now}"
+}
+
