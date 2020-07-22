@@ -49,6 +49,7 @@ function merge() {
 
 # Services control
 function start() {
+  sudo -v
   for service in "$@"
   do
   eval "sudo service ${service} start"
@@ -56,6 +57,7 @@ function start() {
 }
 
 function stop() {
+  sudo -v
   for service in "$@"
   do
   eval "sudo service ${service} stop"
@@ -63,6 +65,7 @@ function stop() {
 }
 
 function reload() {
+  sudo -v
   for service in "$@"
   do
   eval "sudo service ${service} reload"
