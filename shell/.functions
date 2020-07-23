@@ -50,31 +50,57 @@ function merge() {
 # Services control
 function start() {
   sudo -v
-  for service in "$@"
-  do
+  for service in "$@"; do
   eval "sudo service ${service} start"
   done
 }
 
 function stop() {
   sudo -v
-  for service in "$@"
-  do
-  eval "sudo service ${service} stop"
+  for service in "$@"; do
+    eval "sudo service ${service} stop"
   done
 }
 
 function reload() {
   sudo -v
-  for service in "$@"
-  do
-  eval "sudo service ${service} reload"
+  for service in "$@"; do
+    eval "sudo service ${service} reload"
   done
 }
 
-# Small helpers
+# Run Laravel schedular manually
+function scheduler() {
+  while :; do
+    php artisan schedule:run
+  echo "Sleeping 60 seconds..."
+    sleep 60
+  done
+}
+
+# Time and weather helpers
 function now() {
   now=$(date +"%T")
   echo "Current time: ${now}"
+}
+
+function weather() {
+  city="$@"
+
+  if [ -z "$city" ]; then
+    city="office"
+  fi
+
+  if [ "$city" = "home" ]; then
+    city="Krimpen aan den IJssel"
+  fi
+
+  if [ "$city" = "office" ]; then
+    city="Capelle aan den IJssel"
+  fi
+
+  city=${city// /'%20'}
+
+  eval "curl http://wttr.in/${city}"
 }
 
