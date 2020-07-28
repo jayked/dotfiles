@@ -69,6 +69,13 @@ function reload() {
   done
 }
 
+function restart() {
+  sudo -v
+  for service in "$@"; do
+    eval "sudo service ${service} restart"
+  done
+}
+
 # Run Laravel schedular manually
 function scheduler() {
   php="php$1"
