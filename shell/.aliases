@@ -13,6 +13,7 @@ alias diff="git diff"
 
 # Composer
 alias ci="composer install"
+alias cu="composer update"
 alias cda="composer dumpautoload"
 
 # Testin
