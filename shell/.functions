@@ -81,7 +81,7 @@ function scheduler() {
   php="php$1"
 
   while :; do
-    eval "${php} artisan schedule:run"php artisan schedule:run
+    eval "${php} artisan schedule:run"
   echo "Sleeping 60 seconds..."
     sleep 60
   done
