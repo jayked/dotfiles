@@ -123,3 +123,14 @@ function weather() {
   eval "curl http://wttr.in/${city}"
 }
 
+# Generate a random string
+function random() {
+  amountOfCharacters="$1"
+
+  if [ "$amountOfCharacters" = "" ]; then
+    amountOfCharacters="32"
+  fi
+
+  eval "cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${amountOfCharacters} | head -n 1"
+}
+
