@@ -76,7 +76,7 @@ function restart() {
   done
 }
 
-# Run Laravel schedular manually
+# Run Laravel scheduler manually
 function scheduler() {
   php="php$1"
 
