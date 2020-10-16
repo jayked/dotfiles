@@ -78,9 +78,18 @@ if [ -x /usr/bin/dircolors ]; then
    #alias egrep='egrep --color=auto'
 fi
 
+# enable autocompletion for Git branches
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+
 # Extra paths
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Load NVM
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
