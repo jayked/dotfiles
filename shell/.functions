@@ -7,7 +7,7 @@ parse_git_branch() {
 function phpunit() {
   phpVersion="$1"
   if [ "$phpVersion" = "" ]; then
-    phpVersion="8.0"
+    phpVersion=""
   fi
 
   exec "php${phpVersion} ./vendor/bin/phpunit"
@@ -19,7 +19,7 @@ function xdebug() {
 
   phpVersion="$1"
   if [ "$phpVersion" = "" ]; then
-    phpVersion="8.0"
+    phpVersion=""
   fi
 
   iniFileLocation="/etc/php/$phpVersion/mods-available/xdebug.ini";
@@ -34,6 +34,23 @@ function xdebug() {
     sed -i -e 's/^zend_extension/#zend_extension/g' $iniFileLocation
     echo "xdebug is now inactive";
   fi
+}
+
+# Configure a PHP version as default
+function phpv() {
+  sudo -v
+
+  phpVersion="$1"
+
+  eval "sudo update-alternatives --set php /usr/bin/php$phpVersion";
+  eval "sudo update-alternatives --set phar /usr/bin/phar$phpVersion";
+  eval "sudo update-alternatives --set phar.phar /usr/bin/phar.phar$phpVersion";
+  eval "sudo update-alternatives --set phpize /usr/bin/phpize$phpVersion";
+  eval "sudo update-alternatives --set php-config /usr/bin/php-config$phpVersion";
+  eval "sudo pear config-set php_suffix $phpVersion";
+  eval "sudo pecl config-set php_bin /usr/bin/php$phpVersion";
+  eval "sudo pecl config-set php_ini /etc/php/%phpVersion/cli/php.ini";
+  echo "PHP version set to $phpVersion";
 }
 
 # Git
