@@ -7,7 +7,7 @@ parse_git_branch() {
 function phpunit() {
   phpVersion="$1"
   if [ "$phpVersion" = "" ]; then
-    phpVersion="7.4"
+    phpVersion="8.0"
   fi
 
   exec "php${phpVersion} ./vendor/bin/phpunit"
@@ -19,7 +19,7 @@ function xdebug() {
 
   phpVersion="$1"
   if [ "$phpVersion" = "" ]; then
-    phpVersion="7.4"
+    phpVersion="8.0"
   fi
 
   iniFileLocation="/etc/php/$phpVersion/mods-available/xdebug.ini";
