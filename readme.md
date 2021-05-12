@@ -5,11 +5,10 @@ For quick configuration of preferences I put the configuration in these dotfiles
 Clone the repository in the home folder of your user and starting the installation:
 ```
 git clone https://github.com/jayked/dotfiles.git .dotfiles
-cd .dotfiles
-./bootstrap
+./.dotfiles/bootstrap
 ```
-You can re-install by cd-ing to the `.dotfiles` directory and running the following command:
+You can re-install by cd-ing to your home directory and re-running the bootstrap command:
 ```
-./bootstrap
+./.dotfiles/bootstrap
 ```
 
