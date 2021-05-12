@@ -20,3 +20,6 @@ alias cda="composer dumpautoload"
 # Testin
 alias phpunit="php ./vendor/phpunit/phpunit/phpunit"
 
+# Helpers
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+
