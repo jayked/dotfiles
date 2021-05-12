@@ -17,9 +17,10 @@ alias cr="composer require"
 alias cu="composer update"
 alias cda="composer dumpautoload"
 
-# Testin
+# Testing
 alias phpunit="php ./vendor/phpunit/phpunit/phpunit"
 
-# Helpers
+# Services and helpers
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias mailhog="echo 'Starting MailHog @ mailhog.localhost:8025' && ~/go/bin/MailHog -hostname mailhog.localhost"
 
