@@ -1,5 +1,6 @@
 #PHPStorm
 .idea
+.phpstorm.meta.php
 
 # Unit tests
 .coverage
