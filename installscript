@@ -62,3 +62,13 @@ echo 'Install Mailhog'
 echo '---------------'
 go get github.com/mailhog/MailHog
 
+
+echo 'Install Ngrok'
+echo '---------------'
+cd
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+unzip ngrok-stable-linux-amd64.zip
+sudo mv ngrok /usr/local/bin/ngrok
+rm ngrok-stable-linux-amd64.zip
+sudo chmod 755 /usr/local/bin/ngrok
+
