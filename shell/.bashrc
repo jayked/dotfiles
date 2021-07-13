@@ -78,11 +78,6 @@ if [ -x /usr/bin/dircolors ]; then
    #alias egrep='egrep --color=auto'
 fi
 
-# enable autocompletion for Git branches
-if [ -f /etc/bash_completion ]; then
-  . /etc/bash_completion
-fi
-
 # Extra paths
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
