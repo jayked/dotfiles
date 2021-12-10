@@ -1,3 +1,8 @@
+# Navigation
+project() {
+  eval "cd ~/Code/${1}"
+}
+
 # get the git branch and output it
 parse_git_branch() {
    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
