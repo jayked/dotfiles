@@ -18,7 +18,8 @@ alias cu="composer update"
 alias cda="composer dumpautoload"
 
 # Testing
-alias phpunit="php ./vendor/phpunit/phpunit/phpunit"
+alias phpunit="php ./vendor/bin/phpunit"
+alias phpstan="php ./vendor/bin/phpstan analyze"
 
 # Services and helpers
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
