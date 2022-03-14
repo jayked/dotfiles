@@ -2,6 +2,9 @@
 .idea
 .phpstorm.meta.php
 
+# VS Code
+.vscode
+
 # Unit tests
 .coverage
 public/.coverage
