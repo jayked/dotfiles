@@ -2,7 +2,7 @@
 
 # Install some basic system requirements
 sudo apt update
-sudo apt install curl fontconfig wget nginx golang-go bash-completion -y
+sudo apt install curl fontconfig wget nginx golang-go bash-completion vim unzip -y
 
 # Symlink bashrc
 ln -s $HOME/.dotfiles/shell/.bashrc $HOME/.bashrc
