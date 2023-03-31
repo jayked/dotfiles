@@ -2,7 +2,7 @@
 
 # Install some basic system requirements
 sudo apt update
-sudo apt install curl fontconfig wget nginx golang-go bash-completion vim unzip -y
+sudo apt install curl fontconfig wget nginx bash-completion vim unzip -y
 
 # Symlink bashrc
 ln -s $HOME/.dotfiles/shell/.bashrc $HOME/.bashrc
@@ -11,6 +11,10 @@ ln -s $HOME/.dotfiles/shell/.bashrc $HOME/.bashrc
 ln -s $HOME/.dotfiles/shell/.vimrc $HOME/.vimrc
 
 # Symlink fonts
+if [ -d "$HOME/.fonts" ];
+then
+    rm $HOME/.fonts
+fi
 ln -s $HOME/.dotfiles/fonts $HOME/.fonts
 ln -s $HOME/.dotfiles/fonts /usr/share/fonts
 
@@ -59,10 +63,9 @@ echo 'Install Nginx'
 echo '-------------'
 sudo apt install nginx -y
 
-echo 'Install Mailhog'
+echo 'Install Mailpit'
 echo '---------------'
-go get github.com/mailhog/MailHog
-
+sudo bash < <(curl -sL https://raw.githubusercontent.com/axllent/mailpit/develop/install.sh)
 
 echo 'Install Ngrok'
 echo '---------------'

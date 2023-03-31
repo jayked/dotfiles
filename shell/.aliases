@@ -24,4 +24,5 @@ alias phpstan="php ./vendor/bin/phpstan analyze"
 # Services and helpers
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias mailhog="echo 'Starting MailHog @ mailhog.localhost:8025' && ~/go/bin/MailHog -hostname mailhog.localhost"
+alias mailpit="echo 'Starting mailpit @ localhost:8025' && /usr/local/bin/mailpit"
 
