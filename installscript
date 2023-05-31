@@ -27,13 +27,11 @@ echo 'Configure font'
 echo '--------------'
 fc-cache -f -v
 
-echo 'Install NVM'
+echo 'Install FNM'
 echo '-----------'
 cd $HOME
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 cd $HOME/.dotfiles
-echo 'reset the .bashrc file due to changes by the NVM install'
-git checkout HEAD -- shell/.bashrc
 
 echo 'Install PHP'
 echo '-----------'
