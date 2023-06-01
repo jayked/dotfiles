@@ -89,3 +89,11 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add DNS entry for Windows host
+if ! $(cat /etc/hosts | grep -q 'winhost'); then
+  echo 'Adding DNS entry for Windows host in /etc/hosts'
+  echo '\n# Windows host - added via ~/.bashhrc' | sudo tee -a /etc/hosts
+  echo -e "$(grep nameserver /etc/resolv.conf | awk '{print $2, "   winhost"}')" | sudo tee -a /etc/hosts
+fi
+
