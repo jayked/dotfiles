@@ -84,6 +84,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/share/fnm:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(fnm env --use-on-cd)"
 

@@ -23,20 +23,24 @@ ln -s $HOME/.dotfiles/shell/.gitignore-global $HOME/.gitignore-global
 git config --global core.excludesfile $HOME/.gitignore-global
 git config --global core.editor "vim"
 
+echo '--------------'
 echo 'Configure font'
 echo '--------------'
 fc-cache -f -v
 
+echo '-----------'
 echo 'Install FNM'
 echo '-----------'
 cd $HOME
 curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 cd $HOME/.dotfiles
 
+echo '-----------'
 echo 'Install PHP'
 echo '-----------'
 sudo apt install php php-dev php-fpm -y
 
+echo '----------------'
 echo 'Install composer'
 echo '----------------'
 EXPECTED_COMPOSER_CHECKSUM="$(curl https://composer.github.io/installer.sig)"
@@ -53,24 +57,33 @@ rm composer-setup.php
 sudo mv composer.phar /usr/local/bin/composer
 sudo chmod 755 /usr/local/bin/composer
 
+echo '-------------'
 echo 'Install redis'
 echo '-------------'
 sudo apt install redis -y
 
+echo '-------------'
 echo 'Install Nginx'
 echo '-------------'
 sudo apt install nginx -y
 
+echo '---------------'
 echo 'Install Mailpit'
 echo '---------------'
 sudo bash < <(curl -sL https://raw.githubusercontent.com/axllent/mailpit/develop/install.sh)
 
+echo '-------------'
 echo 'Install Ngrok'
-echo '---------------'
+echo '-------------'
 cd
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 unzip ngrok-stable-linux-amd64.zip
 sudo mv ngrok /usr/local/bin/ngrok
 rm ngrok-stable-linux-amd64.zip
 sudo chmod 755 /usr/local/bin/ngrok
+
+echo '------------'
+echo 'Install Rust'
+echo '------------'
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path -y
 
