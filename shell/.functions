@@ -119,7 +119,7 @@ function scheduler() {
   done
 }
 
-# Time and weather helpers
+# Helpers
 function now() {
   now=$(date +"%T")
   echo "Current time: ${now}"
@@ -143,6 +143,12 @@ function weather() {
   city=${city// /'%20'}
 
   eval "curl https://wttr.in/${city}"
+}
+
+function qr() {
+  content="$@"
+
+  eval "curl https://qrenco.de/${content}"
 }
 
 # Generate a random string
