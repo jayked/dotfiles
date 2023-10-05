@@ -146,9 +146,11 @@ function weather() {
 }
 
 function qr() {
-  content="$@"
+  eval "curl https://qrenco.de/${1}"
+}
 
-  eval "curl https://qrenco.de/${content}"
+function shortlink() {
+  eval "curl -F url=${1} https://shorta.link"
 }
 
 # Generate a random string
