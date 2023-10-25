@@ -60,14 +60,14 @@ function phpv() {
 
 # Git
 function commit() {
-  commitMessage="$1"
+  files="$@"
 
-  if [ "$commitMessage" = "" ]; then
-    commitMessage="wip"
+  if [ "$files" = "" ]; then
+    files="."
   fi
 
-  git add .
-  eval "git commit -a -m '${commitMessage}'"
+  eval "git add ${files}"
+  eval "git commit"
 }
 
 function checkout() {
