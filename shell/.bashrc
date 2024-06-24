@@ -94,6 +94,6 @@ eval "$(fnm env --use-on-cd)"
 if ! $(cat /etc/hosts | grep -q 'winhost'); then
   echo 'Adding DNS entry for Windows host in /etc/hosts'
   echo '\n# Windows host - added via ~/.bashhrc' | sudo tee -a /etc/hosts
-  echo -e "$(grep nameserver /etc/resolv.conf | awk '{print $2, "   winhost"}')" | sudo tee -a /etc/hosts
+  echo -e "$(ip route show | grep -i default | awk '{ print $3, "   winhost"}')" | sudo tee -a /etc/hosts
 fi
 

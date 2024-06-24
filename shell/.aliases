@@ -1,8 +1,8 @@
-# Navigation
-alias cdw="cd /mnt/d/www"
-
 # Laravel
 alias a="php artisan"
+
+# FNM
+alias fnpm="fnm exec npm"
 
 # Git
 alias pull="git pull"
