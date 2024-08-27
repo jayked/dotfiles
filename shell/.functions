@@ -142,7 +142,7 @@ function weather() {
 
   city=${city// /'%20'}
 
-  eval "curl https://wttr.in/${city}"
+  eval "curl https://wttr.in/${city}?TF"
 }
 
 function qr() {
