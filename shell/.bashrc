@@ -87,6 +87,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/fnm/target/release/fnm:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="./vendor/bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # fnm
 FNM_PATH="/home/janjoost/.local/share/fnm"
