@@ -32,7 +32,7 @@ echo '-----------'
 echo 'Install FNM'
 echo '-----------'
 cd $HOME
-curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
+curl -fsSL https://fnm.vercel.app/install | bash
 cd $HOME/.dotfiles
 
 echo '-----------'
