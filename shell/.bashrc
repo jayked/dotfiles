@@ -86,6 +86,7 @@ export PATH="$HOME/.local/bin:$PATH"
 #export PATH="$HOME/.local/share/fnm:$PATH"
 export PATH="$HOME/fnm/target/release/fnm:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="./vendor/bin:$PATH"
 
 eval "$(fnm env --use-on-cd)"
 
