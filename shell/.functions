@@ -109,6 +109,15 @@ function scheduler() {
   done
 }
 
+# Keep restarting Laravel horizon
+function horizon() {
+  php="php$1"
+
+  while :; do
+    eval "${php} artisan horizon"
+  done
+}
+
 # Helpers
 function now() {
   now=$(date +"%T")
