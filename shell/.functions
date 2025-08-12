@@ -8,16 +8,6 @@ parse_git_branch() {
    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-# Run PHPUnit without having to type the complete path
-function phpunit() {
-  phpVersion="$1"
-  if [ "$phpVersion" = "" ]; then
-    phpVersion=""
-  fi
-
-  exec "php${phpVersion} ./vendor/bin/phpunit"
-}
-
 # Enable/disable xdebug
 function xdebug() {
   sudo -v
