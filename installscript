@@ -86,3 +86,9 @@ echo 'Install Rust'
 echo '------------'
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path -y
 
+echo '------------'
+echo 'Install TMUX'
+echo '------------'
+sudo apt install tmux
+ln -s $HOME/.dotfiles/shell/.tmux.conf $HOME/.tmux.conf
+n -s 
