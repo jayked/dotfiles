@@ -2,7 +2,7 @@
 
 This directory contains a variety of chatmodes for GitHub CoPilot.
 A symlink will be set to `~/.copilot/chatmodes` by using the installscript.
-VS Code should either automatically detect the chatmodes or you can create a symlink from `~/.copilot/chatmodes` to `.github/chatmodes` inside your workspace.
+VS Code should either automatically detect the chatmodes, you can create a symlink from `~/.copilot/chatmodes` to `.github/chatmodes` inside your workspace or you can add the directory to the list of Mode Files Locations.
 
 ## Modes
 This folder will contain multiple modes.
