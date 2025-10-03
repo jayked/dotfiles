@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Start teecontrol tmux session and rename first window
+tmux new-session -d -s mailpit
+tmux rename-window -t mailpit:1 "main"
+
+# Start all commands
+tmux send-keys -t mailpit:1 "cd && mailpit" C-m
+
+tmux select-window -t mailpit:1
+tmux attach-session -t mailpit
+

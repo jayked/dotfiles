@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Start tmux session and rename first window
+tmux new-session -d -s example -c ~/Code/teecontrol
+tmux rename-window -t example:1 "main"
+
+# Split window into multiple panes
+# 1.1 = Horizon
+# 1.2 = Scheduler
+# 1.3 = NPM
+# 1.4 = Node socket
+# 1.5 = Maybe a nuxt front-end
+tmux split-window -h -t example:1
+tmux split-window -v -t example:1.2
+tmux split-window -v -t example:1.3
+tmux split-window -h -t example:1.1
+
+# Start all commands
+tmux send-keys -t example:1.1 "cd && project example && horizon" C-m
+tmux send-keys -t example:1.2 "cd && project example && scheduler" C-m
+tmux send-keys -t example:1.3 "cd && project example && npm run dev" C-m
+tmux send-keys -t example:1.4 "cd && project example && node --env-file=.env socket" C-m
+tmux send-keys -t example:1.5 "cd && project example-nuxt && npm run dev" C-m
+
+tmux select-window -t example:1
+tmux attach-session -t example

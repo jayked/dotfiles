@@ -2,7 +2,7 @@
 
 # Install some basic system requirements
 sudo apt update
-sudo apt install curl fontconfig wget nginx bash-completion vim unzip -y
+sudo apt install curl fontconfig wget nginx bash-completion vim unzip gh -y
 
 # Symlink bashrc
 ln -s $HOME/.dotfiles/shell/.bashrc $HOME/.bashrc
@@ -32,13 +32,20 @@ echo '-----------'
 echo 'Install FNM'
 echo '-----------'
 cd $HOME
-curl -fsSL https://fnm.vercel.app/install | bash
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 cd $HOME/.dotfiles
 
 echo '-----------'
 echo 'Install PHP'
 echo '-----------'
 sudo apt install php php-dev php-fpm -y
+
+echo '-------------'
+echo 'Setup PHP PIE'
+echo '-------------'
+sudo curl -L --output /usr/bin/pie https://github.com/php/pie/releases/download/1.2.1/pie.phar
+gh attestation verify --owner php /usr/bin/pie
+sudo chmod +x /usr/bin/pie
 
 echo '----------------'
 echo 'Install composer'
@@ -90,5 +97,9 @@ echo '------------'
 echo 'Install TMUX'
 echo '------------'
 sudo apt install tmux
-ln -s $HOME/.dotfiles/shell/.tmux.conf $HOME/.tmux.conf
-n -s 
+ln -sf $HOME/.dotfiles/shell/.tmux.conf $HOME/.tmux.conf
+if [ ! -d $HOME/tmux_scripts ]; then
+    mkdir $HOME/tmux_scripts
+fi
+ln -sf $HOME/.dotfiles/tmux_scripts/example $HOME/tmux_scripts/example
+ln -sf $HOME/.dotfiles/tmux_scripts/mailpit $HOME/tmux_scripts/mailpit
